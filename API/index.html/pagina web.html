@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="c:\Users\digim\OneDrive\Escritorio\DEV OP's\pagina dev ops estilo.css">
+    <title>NBA Rating Prediction</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="https://static.wixstatic.com/media/e16f80_6d5a7633da3f4bd5b062fc0e2e62d370~mv2.png/v1/fill/w_77,h_77,al_c,usm_0.66_1.00_0.01/e16f80_6d5a7633da3f4bd5b062fc0e2e62d370~mv2.png" alt="Logo de la empresa">
+        <nav>
+            <ul>
+                <li><a href="c:\Users\digim\OneDrive\Escritorio\DEV OP's\proyecto de los deep op's.html">Inicio</a></li>
+                <li><a href="c:\Users\digim\OneDrive\Escritorio\DEV OP's\contacto de los devops.html">Contacto</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Más información</a></li>
+                <li><a href="file:///C:/Users/digim/OneDrive/Escritorio/Pagina%20web%20The%20final%20Proyect/atencion%20al%20cliente.html">Soporte al Cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="color:white;">NBA Rating Prediction Dashboard</h1>
+
+    <main>
+        <section id="seccion1">
+            <h2>Subir Archivo</h2>
+            <p>Selecciona un archivo CSV para comenzar.</p>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="archivo">
+                <input type="submit" id="guardar" value="Guardar"> {{ save }}
+            </form>
+            <table id="tabla-datos"></table>
+        </section>
+
+        <section id="seccion3">
+            <h2>Limpieza de Datos</h2>
+            <p>Limpia el archivo seleccionado para preparar los datos.</p>
+            <form action="/clean">
+                <input type="submit" id="limpiar" value="Limpiar"> {{ clean }}
+            </form>
+        </section>
+
+        <section id="seccion4">
+            <h2>Entrenamiento del Modelo</h2>
+            <p>Entrena el modelo con los datos limpios.</p>
+            <form action="/feed">
+                <input type="submit" id="entrenar" value="Entrenar"> {{ training }}
+            </form>
+        </section>
+
+        <section id="seccion5">
+            <h2>Predicción del Rating</h2>
+            <p>Calcula el cambio en el rating neto y la puntuación general del equipo con el jugador en la cancha.</p>
+            <form action="/predict" method="post">
+                <input type="number" placeholder="Net Rating..." id="net_rating" name="net_rating">
+                <input type="submit" id="predecir" value="Calcular"></input>
+            </form>
+            <p id="prediction-text">{{ NetRatingPrediction }}</p>
+            <form action="/download">
+                <input type="submit" value="Descargar">
+            </form>
+        </section>
+    </main>
+
+    <footer class="clearfix">
+        <!-- Contenido del footer -->
+    </footer>
+
+    <script>
+        // Script de JavaScript para manejar eventos y llamadas a la API.
+    </script>
+</body>
+
+</html>
